@@ -5,15 +5,38 @@
   
 
   
-  <title>Hexo</title>
+  <title>在gitlab中玩转cicd | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="什么是CI&#x2F;CD持续集成（CI）和持续部署（CD）是DevOps中重要的两个环节，传统的软件开发和交付方式正在迅速变得过时，过去软件迭代与开发里，大多数公司的软件发布周期是每月、每季度甚至每年，较长的周期不利于产品的试错以及敏捷开发，而现在，DevOps 时代，每周、每天甚至每天多次都是常态。 开发团队通过编写软件交付流水线（Pipeline）代码实现版本构建，发布的自动化，以快速进行验证和缩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在gitlab中玩转cicd">
+<meta property="og:url" content="http://example.com/2021/03/28/gitlab/play-cicd-in-gitlab/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="什么是CI&#x2F;CD持续集成（CI）和持续部署（CD）是DevOps中重要的两个环节，传统的软件开发和交付方式正在迅速变得过时，过去软件迭代与开发里，大多数公司的软件发布周期是每月、每季度甚至每年，较长的周期不利于产品的试错以及敏捷开发，而现在，DevOps 时代，每周、每天甚至每天多次都是常态。 开发团队通过编写软件交付流水线（Pipeline）代码实现版本构建，发布的自动化，以快速进行验证和缩">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C25c3dfd80f57faa3eb1029e42a787ffd.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com/images/blog/2021-04-01-21-27-44_c7098d29.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C6127e14a3a77d0970cfab2934f11b781.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5Cbf329e38d119b379cb3f789d6e2fb9fd.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C3d7d9be41d8d383572bee29ae8fe2827.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C8f309188cc584c17efa3acd6a7494fdf.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C799f2e5bd172ae56f0a24985939d6731.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C5d3b019e51bbd20a3090c252df4afe87.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5Cb8434ad83a5bc73e8afbc61b25f59571.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C492e3543f1a4462c39741de5146efcc5.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5Cf2ab9131e8bb0829a987ca75ac5a03e7.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C1973f0595af1c9c8b28ca46068f41296.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C653cb725b258eb3dd604f18bddef8768.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5Cc93bb4359ac1d2dfce5a0c8f450189ea.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C9fc048eb2effa8757aa2dc7a4c29dd9d.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C01553d39ef2a554bd9889b169925a4ae.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5Cfbba1ce4a37b3ddc0e1b7d1930573e2e.png">
+<meta property="og:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C2821e2fe291f996c51bcf6878f225f25.png">
+<meta property="article:published_time" content="2021-03-28T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-03T18:08:53.544Z">
 <meta property="article:author" content="kezy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C25c3dfd80f57faa3eb1029e42a787ffd.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -62,96 +85,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/04/03/hello-world/" class="article-date">
-  <time datetime="2021-04-03T18:08:53.544Z" itemprop="datePublished">2021-04-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/03/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/03/hello-world/" data-id="ckn21v8rg00002f09c6qs4kvd" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-shell/array-for-in" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/04/03/shell/array-for-in/" class="article-date">
-  <time datetime="2021-04-03T18:08:53.544Z" itemprop="datePublished">2021-04-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/03/shell/array-for-in/">shell命令使用数组循环</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>shell 数组循环的用法，对于一些构建工具很有帮助</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#！/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#定义方法一  数组定义为空格分割</span></span><br><span class="line">array=(<span class="string">&#x27;a&#x27;</span> <span class="string">&#x27;b&#x27;</span> <span class="string">&#x27;c&#x27;</span> <span class="string">&#x27;d&#x27;</span> <span class="string">&#x27;e&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义方法二  </span></span><br><span class="line">arrayIndex[0]=1</span><br><span class="line">arrayIndex[1]=2</span><br><span class="line">arrayIndex[2]=3</span><br><span class="line">arrayIndex[3]=4</span><br><span class="line">arrayIndex[4]=5</span><br><span class="line"></span><br><span class="line"><span class="comment">#修改数组值</span></span><br><span class="line">array[0]=<span class="string">&#x27;f&#x27;</span></span><br><span class="line">arrayIndex[1]=6</span><br><span class="line"></span><br><span class="line"><span class="comment">#打印数组长度</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;#arrayIndex[@]&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#for 遍历数组</span></span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> <span class="variable">$&#123;arrayIndex[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$var</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#while 遍历数组</span></span><br><span class="line">i=0</span><br><span class="line"><span class="keyword">while</span>  [[ i -lt <span class="variable">$&#123;#arrayIndex[@]&#125;</span> ]];<span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$&#123;arrayIndex[i]&#125;</span></span><br><span class="line">  <span class="built_in">let</span> i++</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<h2 id="使用shell做服务器的健康检查脚本"><a href="#使用shell做服务器的健康检查脚本" class="headerlink" title="使用shell做服务器的健康检查脚本"></a>使用shell做服务器的健康检查脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># health.sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 这个地方配置多个要进行检查的URL，一般的，这些URL都是来自于某个系统的</span></span><br><span class="line">check_urls=(</span><br><span class="line">  <span class="string">&#x27;https://wiki.enbrands.com/display/IMX/hello&#x27;</span> </span><br><span class="line">  <span class="string">&#x27;https://wiki.enbrands.com/display/IMX/hello&#x27;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> url <span class="keyword">in</span> <span class="variable">$&#123;check_urls[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  curl url</span><br><span class="line">  <span class="comment"># 进行请求，如果请求失败则直接将程序标记为失败</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/03/shell/array-for-in/" data-id="ckn21v8rm00022f09edkcg68n" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-gitlab/play-cicd-in-gitlab" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-gitlab/play-cicd-in-gitlab" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/03/28/gitlab/play-cicd-in-gitlab/" class="article-date">
   <time datetime="2021-03-28T00:00:00.000Z" itemprop="datePublished">2021-03-28</time>
@@ -164,8 +98,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/28/gitlab/play-cicd-in-gitlab/">在gitlab中玩转cicd</a>
+    <h1 class="article-title" itemprop="name">
+      在gitlab中玩转cicd
     </h1>
   
 
@@ -314,11 +248,23 @@ vim /etc/ssh/sshd_config
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2021/04/03/shell/array-for-in/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          shell命令使用数组循环
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
-
+</article>
 
 </section>
         
