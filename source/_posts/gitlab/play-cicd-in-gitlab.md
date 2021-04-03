@@ -81,7 +81,6 @@ run-test:
 5. [linux软连接](https://www.runoob.com/linux/linux-comm-ln.html)
 6. [安装 gilab-runner](https://docs.gitlab.com/runner/install/docker.html)
 7. [Job artifacts](https://docs.gitlab.com/ee/ci/pipelines/job_artifacts.html)
-7. [Job artifacts](https://docs.gitlab.com/ee/ci/pipelines/job_artifacts.html)
 
 ## 环境准备
 
@@ -112,7 +111,7 @@ docker logs -f gitlab
 
 ### 安装并注册 git runner
 
-安装好 gitlab 后还要安装 gitlan-runner 并注册，gitlab-runner 主要用于 响应 gitlab CI/CD，CI/CD里面的script脚本将会被 gitlab-runner 所执行
+安装好 gitlab 后还要安装 gitlab-runner 并注册，gitlab-runner 主要用于响应 gitlab CI/CD，CI/CD里面的script脚本将会被 gitlab-runner 所执行
 
 ``` bash
 docker pull gitlab/gitlab-runner
@@ -160,9 +159,9 @@ Runner registered successfully. Feel free to start it, but if it's running alrea
 ```
 
 * URL 填写 http://localhost/
-* token 从 gitlab获取
+* token 从 gitlab 获取
 * name 随意
-* 不要为runner制定tag， 否则他将会被绑定了tag的job所使用
+* 不要为 runner 指定 tag， 否则他将会被绑定了 tag 的 job 所使用
 * executor 填 shell, 其他的不在本次实践范围
 
 ![20210330163620](https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C8f309188cc584c17efa3acd6a7494fdf.png)
@@ -196,14 +195,9 @@ ln -b -s /node-v10.9.0-linux-x64/bin/node /bin/node
 # 查看node版本
 node -v
 ```
-
-- exector 表示执行器，表示执行脚本时，使用的命令行程序，配置docker比较复杂，此处直接使用shell执行器
-
 ### 安装一台用于部署的服务器
 
-至此，我们还需要一台用于部署应用的服务器，由于需要使用ssh进行连接（gitlab-runner使用该端口做远程部署），我们使用 `nginx` 镜像， 并在上面安装一个 `openssh-server`，最后打开ssh通道，并配置账号密码允许ssh访问
-
-首先，先pull nginx 镜像, 然后启动nginx
+至此，我们还需要一台用于部署应用的服务器，我们使用 `nginx` 镜像
 
 ``` bash
 docker pull nginx
@@ -216,15 +210,14 @@ docker run -d --name nginx \
 
 ![20210404014242](https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5Cb8434ad83a5bc73e8afbc61b25f59571.png)
 
-
 ## 搭建代码仓库和cicd
 ### 新建一个仓库
 
-至此，runner的执行环境基本做完了，接下来我们需要新建一个代码仓库，然后配置CI/CD的相关内容。
+至此，runner 的执行环境基本做完了，接下来我们需要新建一个代码仓库，然后配置 CI/CD 的相关内容。
 
 我们需要先创建一个仓库
 
-访问gitlab http://localhost/, 在 `project` 里面找到 `New Project`
+访问 gitlab http://localhost/, 在 `project` 里面找到 `New Project`
 
 ![20210404014416](https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C492e3543f1a4462c39741de5146efcc5.png)
 
@@ -233,7 +226,7 @@ docker run -d --name nginx \
 
 ![20210330141010](https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5Cf2ab9131e8bb0829a987ca75ac5a03e7.png)
 
-找到hexo模板（一个静态化的博客系统）
+找到 hexo 模板（一个静态化的博客系统）
 
 ![20210330141031](https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C1973f0595af1c9c8b28ca46068f41296.png)
 
@@ -249,7 +242,7 @@ docker run -d --name nginx \
 
 ### 配置cicd
 
-找到`.gitlab-ci.yml` 文件，点开编辑
+找到 `.gitlab-ci.yml` 文件，点开编辑
 
 
 ``` yml
@@ -276,27 +269,27 @@ pages:
 
 ```
 
-保存完毕后，CI/CD就开始执行
+保存完毕后，CI/CD 就开始执行
 
 ![20210331134531](https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5Cc93bb4359ac1d2dfce5a0c8f450189ea.png)
 
 ### 发布程序
 
-cicd执行完毕后，由于我们配置了 `artifacts` 参数，可以在ci/cd面板中下载构建产物
+CI/CD 执行完毕后，由于我们配置了 `artifacts` 参数，可以在 CI/CD 面板中下载构建产物
+
 ![20210331172338](https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C9fc048eb2effa8757aa2dc7a4c29dd9d.png)
 
 我们可以直接在应用服务器上面下载这个产物 [细节看此链接](https://docs.gitlab.com/ee/ci/pipelines/job_artifacts.html#access-the-latest-job-artifacts-by-url)
 
 ``` bash
+# 访问ngx应用服务器
 docker exec -it nginx bash
 # 到ngx的目录
 cd /usr/share/nginx/
 # 下载最后一个在master上面构建的包
 curl --output artifacts.zip --header "PRIVATE-TOKEN: s8Y9J1g5Azof89zfhEhN" "http://192.168.0.157/api/v4/projects/root%2Fblog/jobs/artifacts/master/download?job=pages" 
-
-curl --output artifacts.zip --header "PRIVATE-TOKEN: sLxxMTxn2hw3-vJm2Djw" "http://192.168.208.1/api/v4/projects/root%2Fblog/jobs/artifacts/master/download?job=pages" 
-
 ```
+
 命令中的 Ip 请修改成自己的IP，不要使用localhost, `root%2Fblog` 是项目路径 `root/blog` encode之后的，`PRIVATE-TOKEN` 需要在仓库的 `Setting -> access token` 获得
 
 ![20210331174424](https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C01553d39ef2a554bd9889b169925a4ae.png)
