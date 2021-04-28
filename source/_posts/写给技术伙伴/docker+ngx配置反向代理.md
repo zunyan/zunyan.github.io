@@ -1,12 +1,13 @@
 ---
-title: 在gitlab中玩转cicd
+title: docker+ngx配置反向代理
 ---
 
-<!-- toc -->
+![20210428145359](https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C43053eff4f116c20dfc84312c0a85bb7.png)
 
+<!-- toc -->
 ## 写在前面
 
-这篇文章写给一个姓港的信任，希望他能学会基本的ngx使用，然后再去实现自己的想法
+这篇文章写给一个姓港的同学，希望他能学会基本的ngx使用，然后再去实现自己的想法
 
 ## 准备容器    
 启动 `ngx` 并关联 80 端口
@@ -14,7 +15,7 @@ title: 在gitlab中玩转cicd
 docker run -d -p 80:80 --name nginx nginx:latest
 ```
 
-进入容器，这个控制台留着刷新NGX配置使用
+进入容器，这个控制台留着刷新 `ngx` 配置使用
 ``` bash
 docker exec -it nginx bash
 ```
@@ -40,7 +41,7 @@ server {
 }
 ```
 
-## 重新加载ngx并进行预览
+## 重新加载 `ngx` 并进行预览
 进行拷贝
 ``` bash
 docker cp  ./default.conf nginx:/etc/nginx/conf.d/default.conf
