@@ -64,6 +64,161 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/08/06/hello-world/" class="article-date">
+  <time datetime="2021-08-06T06:57:06.113Z" itemprop="datePublished">2021-08-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/06/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/06/hello-world/" data-id="ckrzzwrsq00001sudcvty57g4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-shell/array-for-in" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/08/06/shell/array-for-in/" class="article-date">
+  <time datetime="2021-08-06T06:57:06.113Z" itemprop="datePublished">2021-08-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/06/shell/array-for-in/">shell命令使用数组循环</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>shell 数组循环的用法，对于一些构建工具很有帮助</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#！/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#定义方法一  数组定义为空格分割</span></span><br><span class="line">array=(<span class="string">&#x27;a&#x27;</span> <span class="string">&#x27;b&#x27;</span> <span class="string">&#x27;c&#x27;</span> <span class="string">&#x27;d&#x27;</span> <span class="string">&#x27;e&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义方法二  </span></span><br><span class="line">arrayIndex[0]=1</span><br><span class="line">arrayIndex[1]=2</span><br><span class="line">arrayIndex[2]=3</span><br><span class="line">arrayIndex[3]=4</span><br><span class="line">arrayIndex[4]=5</span><br><span class="line"></span><br><span class="line"><span class="comment">#修改数组值</span></span><br><span class="line">array[0]=<span class="string">&#x27;f&#x27;</span></span><br><span class="line">arrayIndex[1]=6</span><br><span class="line"></span><br><span class="line"><span class="comment">#打印数组长度</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;#arrayIndex[@]&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#for 遍历数组</span></span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> <span class="variable">$&#123;arrayIndex[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$var</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#while 遍历数组</span></span><br><span class="line">i=0</span><br><span class="line"><span class="keyword">while</span>  [[ i -lt <span class="variable">$&#123;#arrayIndex[@]&#125;</span> ]];<span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$&#123;arrayIndex[i]&#125;</span></span><br><span class="line">  <span class="built_in">let</span> i++</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用shell做服务器的健康检查脚本"><a href="#使用shell做服务器的健康检查脚本" class="headerlink" title="使用shell做服务器的健康检查脚本"></a>使用shell做服务器的健康检查脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># health.sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 这个地方配置多个要进行检查的URL，一般的，这些URL都是来自于某个系统的</span></span><br><span class="line">check_urls=(</span><br><span class="line">  <span class="string">&#x27;https://wiki.enbrands.com/display/IMX/hello&#x27;</span> </span><br><span class="line">  <span class="string">&#x27;https://wiki.enbrands.com/display/IMX/hello&#x27;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> url <span class="keyword">in</span> <span class="variable">$&#123;check_urls[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  curl url</span><br><span class="line">  <span class="comment"># 进行请求，如果请求失败则直接将程序标记为失败</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/06/shell/array-for-in/" data-id="ckrzzwrsy00031sudhtp18cgq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-写给技术伙伴/docker+ngx配置反向代理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/08/06/%E5%86%99%E7%BB%99%E6%8A%80%E6%9C%AF%E4%BC%99%E4%BC%B4/docker+ngx%E9%85%8D%E7%BD%AE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/" class="article-date">
+  <time datetime="2021-08-06T06:57:06.113Z" itemprop="datePublished">2021-08-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/06/%E5%86%99%E7%BB%99%E6%8A%80%E6%9C%AF%E4%BC%99%E4%BC%B4/docker+ngx%E9%85%8D%E7%BD%AE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">docker+ngx配置反向代理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C43053eff4f116c20dfc84312c0a85bb7.png" alt="20210428145359"></p>
+<!-- toc -->
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>这篇文章写给一个姓港的同学，希望他能学会基本的ngx使用，然后再去实现自己的想法</p>
+<h2 id="准备容器"><a href="#准备容器" class="headerlink" title="准备容器"></a>准备容器</h2><p>启动 <code>ngx</code> 并关联 80 端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 80:80 --name nginx nginx:latest</span><br></pre></td></tr></table></figure>
+
+<p>进入容器，这个控制台留着刷新 <code>ngx</code> 配置使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it nginx bash</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p><img src="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C3daa2ffd517177b6239fc8d7a3923d27.png" alt="20210428132825"></p>
+<p>查询 <a target="_blank" rel="noopener" href="https://hub.docker.com/_/nginx">docker ngx</a> 的文档可知，配置文件在 <code>/etc/nginx/conf.d/default.conf</code>, 新增一个控制台，将docker里面的ngx配置文件拷贝出来进行调整</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp nginx:&#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;default.conf .&#x2F;default.conf</span><br></pre></td></tr></table></figure>
+
+<p>进行ngx的配置修改，然后将文件拷贝回去(下面这段配置是简单地一个代理)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    listen  [::]:80;</span><br><span class="line">    server_name  localhost;</span><br><span class="line"></span><br><span class="line">    location &#x2F;&#123;</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;enbrands-2.oss-cn-shanghai.aliyuncs.com&#x2F;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="重新加载-ngx-并进行预览"><a href="#重新加载-ngx-并进行预览" class="headerlink" title="重新加载 ngx 并进行预览"></a>重新加载 <code>ngx</code> 并进行预览</h2><p>进行拷贝</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp  ./default.conf nginx:/etc/nginx/conf.d/default.conf</span><br></pre></td></tr></table></figure>
+
+<p>在容器里面执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 可以通过命令查看修改情况</span></span><br><span class="line">more /etc/nginx/conf.d/default.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启ngx</span></span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+
+<p>可以通过 <a target="_blank" rel="noopener" href="http://localhost/user/d3a1a93e2d572937d7708b55d660bf46.png">http://localhost/user/d3a1a93e2d572937d7708b55d660bf46.png</a> 查看效果</p>
+<p>可以测试一下下列两个图片的展示情况</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://enbrands-2.oss-cn-shanghai.aliyuncs.com/user/d3a1a93e2d572937d7708b55d660bf46.png">http://enbrands-2.oss-cn-shanghai.aliyuncs.com/user/d3a1a93e2d572937d7708b55d660bf46.png</a></li>
+<li><a target="_blank" rel="noopener" href="http://localhost/user/d3a1a93e2d572937d7708b55d660bf46.png">http://localhost/user/d3a1a93e2d572937d7708b55d660bf46.png</a></li>
+</ul>
+<p><img src="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C80f4f37f0ca9616b694ab0c911fe2a19.png" alt="20210428134735"></p>
+<ul>
+<li>如果要修改端口映射，启动阶段的时候 -p 8080:80， 则需要用 localhost:8080 进行访问</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/06/%E5%86%99%E7%BB%99%E6%8A%80%E6%9C%AF%E4%BC%99%E4%BC%B4/docker+ngx%E9%85%8D%E7%BD%AE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/" data-id="ckrzzwrt300041suddbgs6449" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-game/游戏里的数学 - 大转盘" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/08/05/game/%E6%B8%B8%E6%88%8F%E9%87%8C%E7%9A%84%E6%95%B0%E5%AD%A6%20-%20%E5%A4%A7%E8%BD%AC%E7%9B%98/" class="article-date">
@@ -113,9 +268,10 @@
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MAXIMUM_SPEED = <span class="number">0.48</span>; <span class="comment">// 每一毫秒的速度</span></span><br><span class="line"><span class="keyword">const</span> ACCELERATION_TIME = <span class="number">2000</span>; <span class="comment">// 加速的时间</span></span><br><span class="line"><span class="keyword">const</span> ACCELERATION_PER_MS = MAXIMUM_SPEED / ACCELERATION_TIME; <span class="comment">// 每毫秒的加速度</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="编写方法-function-run-void-启动大转盘"><a href="#编写方法-function-run-void-启动大转盘" class="headerlink" title="编写方法 function run(): void; 启动大转盘"></a>编写方法 <code>function run(): void;</code> 启动大转盘</h3><p><img src="https://zunyan-cv.oss-cn-shanghai.aliyuncs.com//images%5Cblog%5C2354a984a2fac3490c3d4ba451184240.png" alt="20210805124625"></p>
-<p>启动方法应该包含 t<sub>0</sub> 到 t<sub>2</sub> 阶段的所有工作，先做匀加速运动，在做匀减速运动，我们记开始执行代码的时候为 t<sub>0</sub>, 那么在 t<sub>0</sub> 到 t<sub>1</sub> 阶段，这是一个三角形，则</p>
+<p>启动方法应该包含 t<sub>0</sub> 到 t<sub>2</sub> 阶段的所有工作，先做匀加速运动，在做匀速运动，我们记开始执行代码的时候为 t<sub>0</sub>, 那么在 t<sub>0</sub> 到 t<sub>1</sub> 阶段，这是一个三角形，则</p>
 <p><img src="https://zunyan-cv.oss-cn-shanghai.aliyuncs.com//images%5Cblog%5Cb42e172b45f96069749499fa42d4ef42.png" alt="20210805130310"></p>
-<p align="center">v<sub>n</sub> = △t / 2000 * 0.48</p>
+<p align="center">v<sub>n</sub> / 0.48 = △t / 2000  </p>
+<p align="center">即 v<sub>n</sub>  = △t / 2000 * / 0.48 </p>
 <p align="center">S = v<sub>n</sub> * △t / 2</p>
 
 <p>当 △t &gt; t<sub>1</sub>(2000ms), 后，则应该再加上匀速的距离，则</p>
@@ -170,162 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/05/game/%E6%B8%B8%E6%88%8F%E9%87%8C%E7%9A%84%E6%95%B0%E5%AD%A6%20-%20%E5%A4%A7%E8%BD%AC%E7%9B%98/" data-id="ckrylspna000119qe2zja69cc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/08/05/hello-world/" class="article-date">
-  <time datetime="2021-08-05T07:34:15.361Z" itemprop="datePublished">2021-08-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/05/hello-world/" data-id="ckrylspn6000019qeel7e5r82" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-shell/array-for-in" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/08/05/shell/array-for-in/" class="article-date">
-  <time datetime="2021-08-05T07:34:15.361Z" itemprop="datePublished">2021-08-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/05/shell/array-for-in/">shell命令使用数组循环</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>shell 数组循环的用法，对于一些构建工具很有帮助</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#！/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#定义方法一  数组定义为空格分割</span></span><br><span class="line">array=(<span class="string">&#x27;a&#x27;</span> <span class="string">&#x27;b&#x27;</span> <span class="string">&#x27;c&#x27;</span> <span class="string">&#x27;d&#x27;</span> <span class="string">&#x27;e&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#定义方法二  </span></span><br><span class="line">arrayIndex[0]=1</span><br><span class="line">arrayIndex[1]=2</span><br><span class="line">arrayIndex[2]=3</span><br><span class="line">arrayIndex[3]=4</span><br><span class="line">arrayIndex[4]=5</span><br><span class="line"></span><br><span class="line"><span class="comment">#修改数组值</span></span><br><span class="line">array[0]=<span class="string">&#x27;f&#x27;</span></span><br><span class="line">arrayIndex[1]=6</span><br><span class="line"></span><br><span class="line"><span class="comment">#打印数组长度</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;#arrayIndex[@]&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#for 遍历数组</span></span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> <span class="variable">$&#123;arrayIndex[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$var</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#while 遍历数组</span></span><br><span class="line">i=0</span><br><span class="line"><span class="keyword">while</span>  [[ i -lt <span class="variable">$&#123;#arrayIndex[@]&#125;</span> ]];<span class="keyword">do</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="variable">$&#123;arrayIndex[i]&#125;</span></span><br><span class="line">  <span class="built_in">let</span> i++</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<h2 id="使用shell做服务器的健康检查脚本"><a href="#使用shell做服务器的健康检查脚本" class="headerlink" title="使用shell做服务器的健康检查脚本"></a>使用shell做服务器的健康检查脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># health.sh</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 这个地方配置多个要进行检查的URL，一般的，这些URL都是来自于某个系统的</span></span><br><span class="line">check_urls=(</span><br><span class="line">  <span class="string">&#x27;https://wiki.enbrands.com/display/IMX/hello&#x27;</span> </span><br><span class="line">  <span class="string">&#x27;https://wiki.enbrands.com/display/IMX/hello&#x27;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> url <span class="keyword">in</span> <span class="variable">$&#123;check_urls[@]&#125;</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  curl url</span><br><span class="line">  <span class="comment"># 进行请求，如果请求失败则直接将程序标记为失败</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/05/shell/array-for-in/" data-id="ckrylspnd000319qe0tqvbr69" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-写给技术伙伴/docker+ngx配置反向代理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/08/05/%E5%86%99%E7%BB%99%E6%8A%80%E6%9C%AF%E4%BC%99%E4%BC%B4/docker+ngx%E9%85%8D%E7%BD%AE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/" class="article-date">
-  <time datetime="2021-08-05T07:34:15.361Z" itemprop="datePublished">2021-08-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/08/05/%E5%86%99%E7%BB%99%E6%8A%80%E6%9C%AF%E4%BC%99%E4%BC%B4/docker+ngx%E9%85%8D%E7%BD%AE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">docker+ngx配置反向代理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C43053eff4f116c20dfc84312c0a85bb7.png" alt="20210428145359"></p>
-<!-- toc -->
-<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>这篇文章写给一个姓港的同学，希望他能学会基本的ngx使用，然后再去实现自己的想法</p>
-<h2 id="准备容器"><a href="#准备容器" class="headerlink" title="准备容器"></a>准备容器</h2><p>启动 <code>ngx</code> 并关联 80 端口</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 80:80 --name nginx nginx:latest</span><br></pre></td></tr></table></figure>
-
-<p>进入容器，这个控制台留着刷新 <code>ngx</code> 配置使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it nginx bash</span><br></pre></td></tr></table></figure>
-
-<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p><img src="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C3daa2ffd517177b6239fc8d7a3923d27.png" alt="20210428132825"></p>
-<p>查询 <a target="_blank" rel="noopener" href="https://hub.docker.com/_/nginx">docker ngx</a> 的文档可知，配置文件在 <code>/etc/nginx/conf.d/default.conf</code>, 新增一个控制台，将docker里面的ngx配置文件拷贝出来进行调整</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp nginx:&#x2F;etc&#x2F;nginx&#x2F;conf.d&#x2F;default.conf .&#x2F;default.conf</span><br></pre></td></tr></table></figure>
-
-<p>进行ngx的配置修改，然后将文件拷贝回去(下面这段配置是简单地一个代理)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    listen  [::]:80;</span><br><span class="line">    server_name  localhost;</span><br><span class="line"></span><br><span class="line">    location &#x2F;&#123;</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;enbrands-2.oss-cn-shanghai.aliyuncs.com&#x2F;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="重新加载-ngx-并进行预览"><a href="#重新加载-ngx-并进行预览" class="headerlink" title="重新加载 ngx 并进行预览"></a>重新加载 <code>ngx</code> 并进行预览</h2><p>进行拷贝</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp  ./default.conf nginx:/etc/nginx/conf.d/default.conf</span><br></pre></td></tr></table></figure>
-
-<p>在容器里面执行命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 可以通过命令查看修改情况</span></span><br><span class="line">more /etc/nginx/conf.d/default.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启ngx</span></span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
-
-<p>可以通过 <a target="_blank" rel="noopener" href="http://localhost/user/d3a1a93e2d572937d7708b55d660bf46.png">http://localhost/user/d3a1a93e2d572937d7708b55d660bf46.png</a> 查看效果</p>
-<p>可以测试一下下列两个图片的展示情况</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="http://enbrands-2.oss-cn-shanghai.aliyuncs.com/user/d3a1a93e2d572937d7708b55d660bf46.png">http://enbrands-2.oss-cn-shanghai.aliyuncs.com/user/d3a1a93e2d572937d7708b55d660bf46.png</a></li>
-<li><a target="_blank" rel="noopener" href="http://localhost/user/d3a1a93e2d572937d7708b55d660bf46.png">http://localhost/user/d3a1a93e2d572937d7708b55d660bf46.png</a></li>
-</ul>
-<p><img src="https://zunyan.oss-cn-hongkong.aliyuncs.com//images%5Cblog%5C80f4f37f0ca9616b694ab0c911fe2a19.png" alt="20210428134735"></p>
-<ul>
-<li>如果要修改端口映射，启动阶段的时候 -p 8080:80， 则需要用 localhost:8080 进行访问</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/05/%E5%86%99%E7%BB%99%E6%8A%80%E6%9C%AF%E4%BC%99%E4%BC%B4/docker+ngx%E9%85%8D%E7%BD%AE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/" data-id="ckrylspne000419qegmlodg9x" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/05/game/%E6%B8%B8%E6%88%8F%E9%87%8C%E7%9A%84%E6%95%B0%E5%AD%A6%20-%20%E5%A4%A7%E8%BD%AC%E7%9B%98/" data-id="ckrzzwrsv00011sud7zhe1472" class="article-share-link">Share</a>
       
       
     </footer>
@@ -488,7 +489,7 @@ vim /etc/ssh/sshd_config
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/28/gitlab/play-cicd-in-gitlab/" data-id="ckrylspnc000219qe2n4h6fzg" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/28/gitlab/play-cicd-in-gitlab/" data-id="ckrzzwrsx00021sude4az582y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -529,19 +530,19 @@ vim /etc/ssh/sshd_config
       <ul>
         
           <li>
+            <a href="/2021/08/06/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/06/shell/array-for-in/">shell命令使用数组循环</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/06/%E5%86%99%E7%BB%99%E6%8A%80%E6%9C%AF%E4%BC%99%E4%BC%B4/docker+ngx%E9%85%8D%E7%BD%AE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">docker+ngx配置反向代理</a>
+          </li>
+        
+          <li>
             <a href="/2021/08/05/game/%E6%B8%B8%E6%88%8F%E9%87%8C%E7%9A%84%E6%95%B0%E5%AD%A6%20-%20%E5%A4%A7%E8%BD%AC%E7%9B%98/">游戏里的数学 - 大转盘</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/05/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/05/shell/array-for-in/">shell命令使用数组循环</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/05/%E5%86%99%E7%BB%99%E6%8A%80%E6%9C%AF%E4%BC%99%E4%BC%B4/docker+ngx%E9%85%8D%E7%BD%AE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">docker+ngx配置反向代理</a>
           </li>
         
           <li>
