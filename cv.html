@@ -1,0 +1,815 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=10;IE=9;IE=8;IE=7;IE=EDGE">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="alternate" media="handheld" href="#" />
+    <meta charset="utf-8">
+    <title>柯遵炎的简历</title>
+    <style>
+        * {
+            outline: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: "Hiragino Sans GB", "Microsoft Yahei", "SimSun", Arial, "Helvetica Neue", Helvetica;
+            color: #333;
+            word-wrap: break-word;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: #eee;
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        main,
+        menu,
+        nav,
+        section,
+        summary {
+            display: block;
+        }
+
+        progress {
+            display: inline-block;
+            vertical-align: baseline;
+        }
+
+        a {
+            color: #555;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #00b38a;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 10px 0;
+            font-weight: normal;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        p+p {
+            margin-top: 10px;
+        }
+
+        img {
+            border: 0;
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            margin: 0;
+            padding: 0;
+            border: 1px solid #ededed;
+            border-radius: 0;
+            font-family: "Hiragino Sans GB", "Microsoft Yahei", "SimSun", Arial, "Helvetica Neue", Helvetica;
+        }
+
+        textarea {
+            overflow: auto;
+        }
+
+        label,
+        select,
+        button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"],
+        input[type="radio"],
+        input[type="checkbox"],
+        input[type="file"] {
+            cursor: pointer;
+        }
+
+        input[type=text],
+        input[type=password],
+        textarea {
+            font-family: "Microsoft Yahei", "SimSun", Arial, "Helvetica Neue", Helvetica;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        th,
+        td {
+            padding: 0;
+        }
+
+        strong {
+            font-weight: normal;
+        }
+
+        em,
+        i {
+            font-style: normal;
+        }
+
+        dl,
+        dt,
+        dd {
+            margin: 0;
+        }
+
+        ::selection {
+            color: #fff;
+            background-color: #00b38a;
+        }
+
+        ::-moz-selection {
+            color: #fff;
+            background-color: #00b38a;
+        }
+
+        ul,
+        ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #container {
+            box-shadow:  0 0 30px rgba(0,0,0,.1);
+            background: #f5f5f5;
+            width: 940px;
+            margin: 50px auto 54px auto;
+            border: 1px solid #e3ebe9;
+            border-radius: 5px;
+        }
+
+        .mr-template {
+            padding: 50px 50px 10px;
+        }
+
+        .mr-template .mr-template_title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .mr-template .mr-template_title span {
+            font-size: 18px;
+            color: #333333;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .mr-template .mr_md_del {
+            display: none;
+        }
+
+        /***** 基本信息 ****/
+
+        .basic {
+            padding: 50px;
+            background: #FAFAFA;
+            border-radius: 5px 5px 0 0;
+            border-bottom: 1px solid #E3EBE9;
+            display: flex;
+        }
+
+        .basic .basic-photo {
+            height: 88px;
+            width: 88px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .basic .basic-photo img {
+            height: 88px;
+            width: 88px;
+            position: absolute;
+            top: 0;
+            border-radius: 50%;
+        }
+
+        .basic .basic-photo .basic-photo_shadow {
+            display: none;
+        }
+
+        .basic .basic-photo:hover .basic-photo_shadow {
+            display: block;
+        }
+
+        .basic .basic-info {
+            position: relative;
+            width: 100%;
+            margin-left: 20px;
+            flex: 1;
+        }
+
+        .basic .basic-info .edit-btn {
+            position: absolute;
+            right: 0;
+            top: 4px;
+        }
+
+        .basic .basic-info .basic-name-area {
+            overflow: hidden;
+            height: 37px;
+            margin-bottom: 11px;
+        }
+
+        .basic .basic-info .basic-name {
+            float: left;
+            max-width: 250px;
+            font-size: 26px;
+            color: #333333;
+            font-weight: 600;
+            line-height: 37px;
+        }
+
+        .basic .basic-info .icon-sex {
+            width: 13px;
+            height: 13px;
+            float: left;
+            margin-top: 16px;
+            margin-left: 10px;
+            background: none;
+        }
+
+        .basic .basic-info .icon-sex.icon-sex__male {
+            background: url(https://www.lgstatic.com/common/image/pc/icon_man.png);
+        }
+
+        .basic .basic-info .icon-sex.icon-sex__female {
+            background: url(https://www.lgstatic.com/common/image/pc/icon_woman.png);
+        }
+
+        .basic .basic-info .basic-self {
+            margin-top: 20px;
+        }
+
+        .basic .basic-info p {
+            font-size: 14px;
+            color: #333333;
+            line-height: 20px;
+            margin-top: 6px;
+        }
+
+        .basic .basic-info i {
+            display: inline-block;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .basic .basic-info .basic-tel_icon {
+            width: 11px;
+            height: 14px;
+            margin-right: 2px;
+            background: url(https://www.lgstatic.com/common/image/pc/icon_phone.png);
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .basic .basic-info .basic-email_icon {
+            width: 14px;
+            height: 11px;
+            margin-right: 2px;
+            background: url(https://www.lgstatic.com/common/image/pc/icon_mail.png);
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .basic .basic-info .basic-tel {
+            margin-right: 20px;
+        }
+
+        .basic-tel span {
+            vertical-align: middle;
+        }
+
+        .basic-email span {
+            vertical-align: middle;
+        }
+
+        /***** 基本信息 end ****/
+
+        /***** 自我描述 ****/
+
+        .per .per-self_content {
+            position: relative;
+        }
+
+        .per .per-self_content .per-self_des {
+            margin-top: 13px;
+            font-size: 14px;
+            color: #666666;
+            line-height: 30px;
+        }
+
+        .per .per-self_content .per-self_des p {
+            margin-top: 0;
+        }
+
+        .per .per-self_content .per-self_des ol {
+            list-style-type: decimal;
+            -webkit-padding-start: 20px;
+        }
+        .per .per-self_content .per-self_des ul {
+            list-style: disc;
+            -webkit-padding-start: 20px;
+        }
+
+        /***** 自我描述 end ****/
+
+        /***** 工作经历 ****/
+
+        .work-exp .work-exp_list {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .work-exp .work-exp_list .exp-list_time {
+            font-size: 14px;
+            color: #666666;
+            position: absolute;
+            right: 0;
+        }
+
+        .work-exp .work-exp_list .exp-list_top {
+            display: flex;
+            align-items: center;
+        }
+
+        .work-exp .work-exp_list .exp-list_top img {
+            width: 46px;
+            height: 46px;
+            margin-right: 10px;
+        }
+
+        .work-exp .work-exp_list .exp-list_top .exp-list_right {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            height: 46px;
+            justify-content: space-between;
+        }
+
+        .work-exp .work-exp_list .exp-list_top .exp-list_right p,
+        .work-exp .work-exp_list .exp-list_top .exp-list_right strong {
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .work-exp .work-exp_list .exp-list_top .exp-list_right strong {
+            font-weight: 600;
+        }
+
+        .work-exp .work-exp_list .tagboard {
+            margin: 20px 0 10px;
+        }
+
+        .work-exp .work-exp_list .exp-list_content {
+            font-size: 14px;
+            color: #666666;
+            line-height: 30px;
+        }
+
+        .tagboard .tagboard-tag {
+            font-size: 12px;
+            color: #999;
+            line-height: 18px;
+            padding: 3px 10px;
+            border: 1px solid #EAEDEC;
+            border-radius: 100px;
+            margin-right: 10px;
+        }
+
+        .work-exp .work-exp_list .exp-list_content ul, .work-exp .work-exp_list .exp-list_content_highlight ul {
+            list-style: disc;
+            -webkit-padding-start: 20px;
+        }
+
+        .work-exp .work-exp_list .exp-list_content ol, .work-exp .work-exp_list .exp-list_content_highlight ol {
+            list-style-type: decimal;
+            -webkit-padding-start: 20px;
+        }
+        /***** 工作经历 end ****/
+
+        /***** 项目经历 ****/
+
+        .pro-exp .pro-exp_list {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_title {
+            font-size: 14px;
+            color: #333333;
+            font-weight: 600;
+            cursor: default;
+            display: flex;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_title .exp-project_name, .pro-exp .pro-exp_list .exp-list_title .exp-project_company span {
+            max-width: 222px;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_title .exp-project_company {
+            display: flex;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_time {
+            font-size: 14px;
+            color: #666666;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_content,
+        .pro-exp .pro-exp_list .exp-project_des {
+            font-size: 14px;
+            color: #666666;
+            line-height: 30px;
+            margin-top: 10px;
+        }
+
+        .pro-exp .exp-list_title.active:hover {
+            color: #00B38A;
+            cursor: pointer;
+        }
+        .pro-exp .exp-project_url {
+            font-size: 14px;
+            color: #666;
+            line-height: 30px;
+        }
+        .pro-exp .pro-exp_list .exp-list_content ul, .pro-exp .pro-exp_list .exp-project_des ul {
+            list-style: disc;
+            -webkit-padding-start: 20px;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_content ol,.pro-exp .pro-exp_list .exp-project_des ol{
+            list-style-type:decimal;-webkit-padding-start:20px
+        }
+
+        /***** 项目经历 end ****/
+
+        /***** 教育经历 ****/
+
+        .edu-exp .edu-exp_list {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_time {
+            font-size: 14px;
+            color: #666666;
+            position: absolute;
+            right: 0;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top {
+            display: flex;
+            align-items: center;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top img {
+            width: 46px;
+            height: 46px;
+            margin-right: 10px;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top .exp-list_right {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            height: 46px;
+            justify-content: space-between;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top .exp-list_right p,
+        .edu-exp .edu-exp_list .exp-list_top .exp-list_right strong {
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top .exp-list_right strong {
+            font-weight: 600;
+        }
+
+
+        /***** 教育经历 end ****/
+
+        /***** 社交主页 ****/
+
+        .social-page .social-page_list {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .social-page .social-page_list .social-page_content {
+            display: flex;
+        }
+
+        .social-page .social-page_list .social-page_content img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .social-page .social-page_list .social-page_content p {
+            font-size: 14px;
+            color: #666666;
+        }
+
+
+        /***** 社交主页 end ****/
+                /***** 图片作品 ****/
+
+        .portfolio-page .portfolio-list{
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .portfolio-page .portfolio-list .portfolio-content{
+            font-size: 14px;
+            color: #666666;
+        }
+
+
+        /***** 图片作品 end ****/
+    </style>
+</head>
+
+    <body>
+        <div id="container">
+            <!-- 基本信息 -->
+            <div class="basic" id="baseInfo">
+                <div class="basic-photo">
+                    <img class="mr_headimg user-avatar" id="userpic" src="https://www.lgstatic.com/i/image6/M00/55/EE/CioPOWEqNi2Ad_pBAADXBeDnlzk099.png" width="120" height="120" alt="头像"
+                    />
+                </div>
+                <div class="basic-info">
+                    <div class="basic-name-area">
+                        <p class="basic-name female">柯遵炎</p>
+                            <i class="icon-sex icon-sex__male"></i>
+                    </div>
+                                <p>
+                                    <span class="basic-company">深圳市云积分科技有限公司</span>
+                                    <span> / </span>
+                                    <span class="basic-job">架构师</span>
+                                </p>
+                            <p class="basic-self">
+                                    <span class="basic-exp">6年工作经验 / </span>
+                                    <span class="basic-edu">本科 . 统招  
+                                         / 
+                                    </span>
+                                    <span class="basic-age">29岁</span>
+                            </p>
+                    <p>
+                            <span class="basic-tel">
+                                <i class="basic-tel_icon"></i>
+                                <span>17727804865</span>
+                            </span>
+                            <span class="basic-email">
+                                <i class="basic-email_icon"></i>
+                                <span>283365507@qq.com</span>
+                            </span>
+                    </p>
+                </div>
+            </div>
+            <!-- /基本信息 -->
+
+            <!-- 自我描述 -->
+            <div class="mr-template per" id="perAbility">
+                <div class="mr-template_title">
+                    <span>个人优势</span>
+                </div>
+                <div class="tagboard integrative-tag">
+                    <div class="integrative-tag_content">
+                    </div>
+                </div>
+                <div class="per-self_content">
+                        <div class="per-self_des">
+                            <p>经验与技术</p>
+<ol>
+ <li>从业6年，大部分的开发工作都是前端工作</li>
+ <li>拥有丰富的项目开发经验，包括angular，react，weex，vue，小程序，游戏开发</li>
+ <li>对运维，架构优化，研发流程，CICD，代码质量管理等都有长期地投入，</li>
+ <li>对前端衍生出来的的其他领域都有涉及，长期参与团队的技术能力建设</li>
+ <li>基本能使用go进行开发（目前主要是做题多一些）</li>
+</ol>
+<p><br /></p>
+<p>曾经的职位与title</p>
+<ol>
+ <li>曾作为公司的技术合伙人（前端方向）</li>
+ <li>曾作为互动营销业务线的整体负责人</li>
+ <li>目前是互动营销业务线的区域技术经理（深圳）</li>
+ <li>是一名前端架构师</li>
+ <li>有一定的管理工作和管理经验，且做过管理的相关培训</li>
+ <li>拥有公司股权 0.5%</li>
+</ol>
+<p><br /></p>
+<p>技术相关主页</p>
+<ol>
+ <li>力扣主页：https://leetcode-cn.com/u/kezunyan/ , 排名 37195， 解决问题 290+</li>
+ <li>掘金：https://juejin.cn/user/1460618508641789</li>
+</ol>
+                        </div>
+                </div>
+            </div>
+            <!-- /自我描述 -->
+
+
+            <!-- 工作经历 -->
+                <div class="mr-template work-exp" id="workExp">
+                    <div class="mr-template_title">
+                        <span>工作经历</span>
+                    </div>
+                    <ol class="work-exp_group">
+                            <li class="work-exp_list">
+                                <p class="exp-list_time">2015.07-至今</p>
+                                <div class="exp-list_top">
+                                    <img src="https://www.lgstatic.com/i/image/M00/10/BC/CgpEMljrY_SAD-hjAAAIdvHxXPM731.png" alt="公司Logo">
+                                    <div class="exp-list_right">
+                                        <strong class="exp-list_title">
+                                            <span>深圳市云积分科技有限公司</span>
+                                             ／
+                                                <span>互动营销业务线</span>
+                                        </strong>
+                                        <p>架构师</p>
+                                    </div>
+                                </div>
+                                <div class="tagboard">
+                                </div>
+                                <div class="exp-list_content">
+                                    <p> 2015年入职公司，从前端做起，包揽公司大小前端业务，</p>
+<ol>
+ <li>负责CRM 系统的开发以及维护（angular -&gt; react -&gt; vue)。含有可视化H5装修器会员中心。</li>
+ <li>负责C端会员中心的开发以及维护</li>
+ <li>负责淘宝、京东、微信等端的业务共创和突破（平台共建）</li>
+ <li>负责开发和维护ECRM。使用react基于流程图的人群全选以及自动营销系统</li>
+ <li>淘宝小程序、微信小程序，定制小程序/互动游戏等</li>
+ <li>作为技术负责人与架构师，负责业务线的技术维护等工作 </li>
+</ol>
+                                </div>
+                            </li>
+                    </ol>
+                </div>
+            <!-- /工作经历 -->
+
+            <!-- 项目经历 -->
+                <div class="mr-template pro-exp" id="proExp">
+                    <div class="mr-template_title">
+                        <span>项目经历</span>
+                    </div>
+                    <ol class="pro-exp_group">
+                            <li class="pro-exp_list">
+                                <p class="exp-list_title">
+                                    <span class="exp-project_name">业务线负责任人/技术专家/架构师</span>
+                                    <span class="exp-project_company">（<span>深圳市云积分科技有限公司</span>）</span>
+                                </p>
+                                <p class="exp-list_time">2019.01-2021.07</p>
+                                <div class="exp-project_des"><p>自2018年开始，较少具体承担大型项目，专注于互动营销定制等领域，主要作为负责任人处理日常的大小工作，包括</p>
+<p><br /></p>
+<p>1. 技术评估以及方案整理输出</p>
+<p>2. 项目管理以及人员管理</p>
+<p>3. 技术设计以及核心技术的推进</p>
+<p>4. 作为机动个人支援各类项目</p></div>
+                                <div class="exp-list_content">
+                                    <p><br /></p>
+                                </div>
+                            </li>
+                            <li class="pro-exp_list">
+                                <p class="exp-list_title">
+                                    <span class="exp-project_name">其他项目</span>
+                                    <span class="exp-project_company">（<span>深圳市云积分科技有限公司</span>）</span>
+                                </p>
+                                <p class="exp-list_time">2019.01-2021.07</p>
+                                <div class="exp-project_des"><ol>
+ <li>淘宝店铺首页定制。使用weex进行淘宝店铺首页的界面定制</li>
+ <li>数据银行爬虫。基于nodejs对阿里数据银行以商家维度进行数据抓取，包括常规的数据抓取以及复杂的人群圈选动作。</li>
+ <li>淘宝店铺转H5爬虫。由于淘宝页面不能在微信打开，故通过爬虫技术，将淘宝店铺的页面进行抓取缓存，同时通过分析HTML，以及windows变量，进行二级三级链接的抓取，保证大部分的页面都被cache下来，可以在微信打开访问</li>
+ <li>天眼埋点系统。为了解决定制业务数据埋点为题，使用mogodb实现埋点统计等功能（原计划还要开放自定义数据分析功能，但一些其他因素被搁置）</li>
+</ol></div>
+                                <div class="exp-list_content">
+                                    <p><br /></p>
+                                </div>
+                            </li>
+                            <li class="pro-exp_list">
+                                <p class="exp-list_title">
+                                    <span class="exp-project_name">客户运营平台</span>
+                                    <span class="exp-project_company">（<span>深圳市云积分科技有限公司</span>）</span>
+                                </p>
+                                <p class="exp-list_time">2018.05-2019.01</p>
+                                <div class="exp-project_des"><p>客户运营平台是淘宝平台在2018年，将自家的ECRM能力开发出来，与ISV共创的项目（ISV提供服务上架到淘宝平台，品牌订购使用），项目主要包含2大部分，人群管理以及智能营销</p>
+<ul>
+ <li>人群管理。借助阿里提供的大量数据标签，进行人权的创建编辑等操作。</li>
+ <li>智能营销。通过可视化的流程图画板，将数字营销活动用图的方式进行表达，执行节点表示每个执行动作具体的内容，而节点之间的连线则表示整个营销活动从何开始，又是如何一步一步的完成整个执行</li>
+</ul></div>
+                                <div class="exp-list_content">
+                                    <ol>
+ <li>这是第一个react项目，第一个版本开发很快，一个月就完成，包含了核心的人群管理和智能营销</li>
+ <li>人群管理有一个交互式的标签选择器</li>
+ <li>智能营销核心部分是营销画布，它是一种类似与流程图绘制软件一个的交互式画布，用户拖拽数据节点，然后进行属性配置，在将数据节点的输入输出按照设计意图进行连接。和流程图绘制不一样的是，营销活动的节点连线是有限制的，比如</li>
+</ol>
+<ul>
+ <li>部分节点活动是相斥的，逻辑上不可相连</li>
+ <li>活动节点的数据流向只有一个方向，一进一出，或者一进多出，需要控制连线时候的IO方向</li>
+ <li>要考虑是否有形成连线闭环（可能会导致后台程序执行出现循环），是否有孤岛节点（即永远不会执行的节点或者节点串）</li>
+ <li>还有一些交互式的辅助，比如快捷键，多选，复制粘贴，小地图导航等</li>
+</ul>
+<p>4. 整体负责项目的核心逻辑，代码结构，画布的底层实现</p>
+                                </div>
+                            </li>
+                            <li class="pro-exp_list">
+                                <p class="exp-list_title">
+                                    <span class="exp-project_name">enbrands</span>
+                                    <span class="exp-project_company">（<span>深圳市云积分科技有限公司</span>）</span>
+                                </p>
+                                <p class="exp-list_time">2016.06-2018.04</p>
+                                <div class="exp-project_des"><p>enbrands CRM 是一款协助商家进行会员管理的电商管理系统，通过各个平台的开发接口，管理会员的积分，B端包括会员运营，会员聚合，权益特性，页面管理（C端的可视化编辑器），商家中心等，除此之外还具备一个C端的会员中心，用于协助商家对消费者进行触达以及互动。</p>
+<p><br /></p></div>
+                                <div class="exp-list_content">
+                                    <p>1. 前端的所有工作，包括技术设计，编码实现，包含C端B端，均由本人设计或者参与设计，并编码完成，期间前端仅有两人。</p>
+<p>2. 拥有一个可视化的H5编辑器，通过托拉拽的方式进行交互式编辑，可以帮助商家快速制作H5页面，配合业务组件，可以将兑换，互动等内容，透露出给消费者</p>
+<p>3. 拥有基于条件，动作，规则概念的策略编辑器，让商家可以通过配置各种条件来限制触发时机，通过规则动作来决定如何对用户资产进行改变，一般用于事件关怀（比如订单事件触发积分加减），以及互动奖励的派送</p>
+<p>4. C端的模块有250+个（由于对一些大品牌会有定制，所有存在大量的定制业务模块），通过seajs做模块的加载达到模块的动态加载，也保证了开发阶段一套代码用于预览以及生产业务，模块彼此隔离独立开发，降低代码错误</p>
+<p><br /></p>
+<ul>
+ <li>项目作为公司第一个主要的用户产品，至今仍在服务于各大品牌（欧莱雅集团，宝洁等）</li>
+ <li>项目与2020年开始进行淘宝的小程序迁移，迁移工作的方案设计以及浅语步骤的实施都有参与，我们在小程序里面了装修方案，这个方案再早些时候曾在微信小程序中做过demo</li>
+</ul>
+                                </div>
+                            </li>
+                    </ol>
+                </div>
+            <!-- /项目经历 -->
+                <!-- 教育经历 -->
+                    <div class="mr-template edu-exp" id="eduExp">
+                        <div class="mr-template_title">
+                            <span>教育经历</span>
+                        </div>
+                        <ol class="edu-exp_group">
+                                <li class="edu-exp_list">
+                                    <p class="exp-list_time">2011.09-2015.06</p>
+                                    <div class="exp-list_top">
+                                        <img src="https://www.lgstatic.com/i/image/M00/AD/51/Cgp3O1i1E7SASZ1cAAAMDssw53I33.jpeg" alt="学校Logo">
+                                        <div class="exp-list_right">
+                                            <strong>江西理工大学</strong>
+                                            <p>本科  . 统招  / 电子科学与技术</p>
+                                        </div>
+                                    </div>
+                                </li>
+                        </ol>
+                    </div>
+                <!-- /教育经历 -->
+
+            <!-- 社交主页 -->
+                <div class="mr-template social-page" id="socialPage">
+                    <div class="mr-template_title">
+                        <span>社交主页</span>
+                    </div>
+                    <ol class="social-page_group">
+                            <li class="social-page_list">
+                                <div class="social-page_content">
+                                    <img src="https://www.lgstatic.com/common/image/social/default@2x.png" alt="">
+                                    <p>http://leetcode-cn.com/u/kezunyan</p>
+                                </div>
+                            </li>
+                            <li class="social-page_list">
+                                <div class="social-page_content">
+                                    <img src="https://www.lgstatic.com/common/image/social/default@2x.png" alt="">
+                                    <p>http://juejin.cn/user/1460618508641789</p>
+                                </div>
+                            </li>
+                    </ol>
+                </div>
+            <!-- /社交主页 -->
+
+        </div>
+
+</html>
